@@ -13,8 +13,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
-
+import os, sys
+sys.path.append('configs')
+from configs.db_config import DATABASE_CONFIG
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -219,12 +220,15 @@ CMS_PLACEHOLDER_CONF = {}
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'project.db',
+        # 'USER': '',
+        'ENGINE': DATABASE_CONFIG['ENGINE'],
+        'NAME': DATABASE_CONFIG['NAME'],
+        'USER': DATABASE_CONFIG['USER'],
         'HOST': 'localhost',
-        'NAME': 'project.db',
         'PASSWORD': '',
         'PORT': '',
-        'USER': ''
     }
 }
 
