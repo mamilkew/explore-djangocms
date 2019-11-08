@@ -8,6 +8,7 @@
 /.cache/
 /.pytest_cache/
 project.db
+configs
 
 ### JetBrains
 .idea/
