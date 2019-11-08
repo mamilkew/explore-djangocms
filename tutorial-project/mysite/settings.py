@@ -13,12 +13,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os, sys
-sys.path.append('configs')
+import os
 from configs.db_config import DATABASE_CONFIG
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -31,24 +30,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
-
-
 
 
 ROOT_URLCONF = 'mysite.urls'
 
-
-
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-
 
 
 # Password validation
@@ -69,7 +59,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -82,7 +71,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -97,11 +85,10 @@ STATICFILES_DIRS = (
 )
 SITE_ID = 1
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'mysite', 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'mysite', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -123,7 +110,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 MIDDLEWARE = [
     'cms.middleware.utils.ApphookReloadMiddleware',
